@@ -13600,25 +13600,6 @@ var product_controller = function ($scope, $rootScope, $compile, $sce, $filter, 
         vm.item.stocking.bin_locations = codes.toJSON();
     };
 
-    vm.location_code_maintenance = async function () {
-
-        const _caller_data = {
-            "location_codes": angular.copy(vm.item.stocking.bin_locations),
-            "save_bin_locations": _save_bin_locations
-        };
-
-        await StdDialog.lastOpenedDialog().closed;
-        vm.location_code_maintenance_dialog = StdDialog.custom({
-            controller_name: 'location_code_maintenance_controller',
-            scope: $scope,
-            create_controller_and_scope: true,
-            configure_from_new_controller: true,
-            is_keyboard_support_required: true,
-            caller_data: _caller_data
-        });
-
-    };
-
     init();
 };
 
