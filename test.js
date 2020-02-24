@@ -13619,17 +13619,6 @@ var product_controller = function ($scope, $rootScope, $compile, $sce, $filter, 
 
     };
 
-    $scope.$on('product_data_changed', function (evnt, args) {
-        if (vm.product_data_loaded) {
-            $scope.$broadcast('product_record_changed', vm.product);
-        }
-    });
-
-    $scope.$on('serial_num_grid_loaded', function (event, args) {
-        vm.serial_number_grid_loaded_flag = true;
-    });
-
-
     init();
 };
 
